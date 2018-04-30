@@ -10,7 +10,7 @@ namespace ASP.NET_MVC5.Controllers
 {
     public class ProductsController : Controller
     {
-        public NorthwindDbcontext _context;
+        private NorthwindDbcontext _context;
 
         public ProductsController()
         {
@@ -25,7 +25,9 @@ namespace ASP.NET_MVC5.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            return View();
+            var products = _context.Products.ToList();
+
+            return View(products);
         }
 
         public ActionResult New()
@@ -33,10 +35,33 @@ namespace ASP.NET_MVC5.Controllers
             return View();
         }
 
+        public ActionResult Edit(int id)
+        {
+            var product = _context.Products.Find(id);
+
+            if (product == null)
+            {
+                HttpNotFound();
+            }
+
+            return View(product);
+        }
+
         [HttpPost]
         public ActionResult Save(Product product)
         {
-            _context.Products.Add(product);
+
+            if (product.ProductID == 0)
+            {
+                _context.Products.Add(product);
+            }
+            else
+            {
+                var productInDb = _context.Products.Find(product.ProductID);
+
+                productInDb.ProductName = product.ProductName;
+            }
+            
             _context.SaveChanges();
 
             return Redirect("Index");

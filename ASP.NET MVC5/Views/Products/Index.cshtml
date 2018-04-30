@@ -1,9 +1,25 @@
-﻿
+﻿@model IEnumerable<NET_MVC5.Models.Product>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-<p>
-    @Html.ActionLink("Go to New", "New", "Products", null, new { @class = "btn btn-primary" })
-</p>
+<h2>Products</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(product.ProductName, "Edit", "Products", new { id = product.ProductID }, null)</td>
+                    <td>@((int)product.UnitPrice)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
