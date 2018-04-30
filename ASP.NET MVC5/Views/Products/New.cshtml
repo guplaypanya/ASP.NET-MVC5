@@ -1,0 +1,14 @@
+﻿@model NET_MVC5.Models.Product
+
+@{
+    ViewBag.Title = "New";
+}
+@using (Html.BeginForm("Save", "Products"))
+{
+    <h2>New</h2>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductName)
+        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control", @required = "true" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
