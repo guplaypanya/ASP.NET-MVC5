@@ -18,7 +18,12 @@
             {
                 <tr>
                     <td>@Html.ActionLink(product.ProductName, "Edit", "Products", new { id = product.ProductID }, null)</td>
-                    <td>@((int)product.UnitPrice)</td>
+                    <td>
+                        @if (product.UnitPrice != null)
+                        {
+                            @((int) product.UnitPrice)
+                        }
+                    </td>
                 </tr>
             }
         </tbody>

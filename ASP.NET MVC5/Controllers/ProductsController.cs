@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ASP.NET_MVC5.Models;
+using ASP.NET_MVC5.ViewModels;
 
 namespace ASP.NET_MVC5.Controllers
 {
@@ -32,7 +33,15 @@ namespace ASP.NET_MVC5.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var categories = _context.Categories.ToList();
+            var viewModel = new ProductViewModel
+            {
+                Categories = categories,
+                Product = new Product()
+            };
+
+
+            return View(viewModel);
         }
 
         public ActionResult Edit(int id)

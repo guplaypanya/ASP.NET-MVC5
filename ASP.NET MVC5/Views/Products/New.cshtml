@@ -1,4 +1,4 @@
-﻿@model NET_MVC5.Models.Product
+﻿@model NET_MVC5.ViewModels.ProductViewModel
 
 @{
     ViewBag.Title = "New";
@@ -7,8 +7,17 @@
 {
     <h2>New</h2>
     <div class="form-group">
-        @Html.LabelFor(m => m.ProductName)
-        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control", @required = "true" })
+        @Html.LabelFor(m => m.Product.ProductName)
+        @Html.TextBoxFor(m => m.Product.ProductName, new { @class = "form-control", @required = "true" })
     </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Product.CategoryID)
+        @Html.DropDownListFor(m => m.Product.CategoryID, 
+        new SelectList(Model.Categories, "CategoryID", "CategoryName"),
+        "Select Category Name", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Product.CategoryID)
+    </div>
+
     <button type="submit" class="btn btn-primary">Save</button>
 }
