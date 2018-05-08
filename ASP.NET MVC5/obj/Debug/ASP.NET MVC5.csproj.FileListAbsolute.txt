@@ -90,3 +90,9 @@ C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\obj\Debug\ASP.NET MVC5.csprojResol
 C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\obj\Debug\ASP.NET MVC5.csproj.CoreCompileInputs.cache
 C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\obj\Debug\ASP.NET MVC5.dll
 C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\obj\Debug\ASP.NET MVC5.pdb
+C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\bin\System.Net.Http.Formatting.dll
+C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\bin\System.Web.Http.dll
+C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\bin\System.Web.Http.WebHost.dll
+C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\bin\System.Net.Http.Formatting.xml
+C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\bin\System.Web.Http.xml
+C:\Users\iceze\Documents\ASP.NET\ASP.NET MVC5\bin\System.Web.Http.WebHost.xml
